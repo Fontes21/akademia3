@@ -13,28 +13,28 @@
         include_once("class/modalidade.php");
         $item = new modalidade();
  
-            $lista = $item->listarItem();
+        $lista = $item->listarItem();
  
-            if ($lista != 0)
-            {
+        if ($lista != 0)
+        {
              
-                foreach($lista as $i)
-                {
+        foreach($lista as $i)
+        {
  
-                    $caminho = $i["caminho"];
-                    $titulo = $i["titulo"];
-                    $descricao = $i["descricao"];
+            $caminho = $i["caminho"];
+            $titulo = $i["titulo"];
+            $descricao = $i["descricao"];
                    
-                    echo "
-                        <div class='card'>
-                            <img class='thumb' src='$caminho' alt='$titulo'>
-                            <p class='titulo-produto'>$titulo</p>
-                            <p>$descricao</p>
-                        </div>
-                    ";
-                }
+            echo "
+            <div class='card'>
+            <img class='thumb' src='$caminho' alt='$titulo'>
+            <p class='titulo-produto'>$titulo</p>
+            <p>$descricao</p>
+            </div>
+            ";
+        }
  
-            }
+        }
  
     ?>
    

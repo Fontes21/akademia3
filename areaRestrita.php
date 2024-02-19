@@ -21,38 +21,38 @@
     ?>
 
     <main>
-        <section class="formulario">
+    <section class="formulario">
             
-        <div>
-            <h2>Área restrita</h2>
-            <form method="post" id="formLogin">
+     <div>
+    <h2>Área restrita</h2>
+    <form method="post" id="formLogin">
 
-                <label for="email">E-mail:</label>
-                <input type="email" placeholder="Informe seu email" name="email" required>
+    <label for="email">E-mail:</label>
+    <input type="email" placeholder="Informe seu email" name="email" required>
                 
-                <label for="senha">Senha:</label>
-                <input type="password" placeholder="Informe uma senha com 8 caracteres ou mais" name="senha" required>
+    <label for="senha">Senha:</label>
+    <input type="password" placeholder="Informe uma senha com 8 caracteres ou mais" name="senha" required>
 
-                <?php
-                    if (isset($_REQUEST["conectar"])) {
-                        $u = new Usuario();
+    <?php
+    if (isset($_REQUEST["conectar"])) {
+        $u = new Usuario();
 
-                        if ($u->conectarUsuario($_REQUEST["email"], $_REQUEST["senha"]) == true) {
-                            session_start();
-                            $_SESSION["email"] = $u->getEmail();
-                            header("Location: acesso.php");               
+    if ($u->conectarUsuario($_REQUEST["email"], $_REQUEST["senha"]) == true) {
+        session_start();
+        $_SESSION["email"] = $u->getEmail();
+        header("Location: acesso.php");               
                         }
 
-                        else {
-                            echo "<span class='mensagemErro'>Usuário e/ou senha incorreto(s)</span>"; //redirecionando para outra página
-                        }
-                    }
-                ?>
+    else {
+        echo "<span class='mensagemErro'>Usuário e/ou senha incorreto(s)</span>"; //redirecionando para outra página
+            }
+        }
+     ?>
                 
-                <button type="submit" class="formBotao" name="conectar">Cadastrar</button>
+         <button type="submit" class="formBotao" name="conectar">Cadastrar</button>
 
-                <span>Esqueceu a senha? Clique aqui.</span>
-                <span>Nao tem cadastro? <a href="./cadastrar.php">Cadastre-se aqui.</a></span>
+        <span>Esqueceu a senha? Clique aqui.</span>
+        <span>Nao tem cadastro? <a href="./cadastrar.php">Cadastre-se aqui.</a></span>
             </form>
         </div>
 
